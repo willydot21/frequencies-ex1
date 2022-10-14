@@ -41,8 +41,3 @@ def create_frecuency_table(elements: list):
     table.add_row(('median:', median, '', '', '', ''))
 
     return table
-
-
-values = []
-
-print(create_frecuency_table(values))
