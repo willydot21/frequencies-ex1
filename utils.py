@@ -20,9 +20,9 @@ def statistical_median(elements: list):
         return 1
 
     if ((n % 2) != 0):
-        return elements[median_index+1]
+        return elements[median_index]
 
-    a, b = elements[median_index], elements[median_index-1]
+    a, b = elements[median_index], elements[median_index+1]
 
     return round((a + b) / 2, 2)
 

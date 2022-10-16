@@ -3,6 +3,19 @@ from prettytable import PrettyTable
 from utils import get_xifi_hash, statistical_median, statistical_mode
 
 
+def parse_str_list(elements: list):
+
+    result = []
+
+    for el in elements:
+        if el.count('.') == 1:
+            result.append(float(el.strip()))
+        else:
+            result.append(int(el.strip()))
+
+    return result
+
+
 def create_frecuency_table(elements: list):
 
     table = PrettyTable()
@@ -41,3 +54,14 @@ def create_frecuency_table(elements: list):
     table.add_row(('median:', median, '', '', '', ''))
 
     return table
+
+
+try:
+    values = parse_str_list(input('Write list of numbers:').split(','))
+    print(values)
+    table = create_frecuency_table(values)
+
+    print(table)
+
+except Exception as e:
+    print("Only numbers can be entered.", e)
